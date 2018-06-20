@@ -15,7 +15,7 @@ def addtosheet():
 	date = now.strftime("%Y-%m-%d")
 	print(date)
 	
-	cnx = mysql.connector.connect(user='root', password='starecraft#1', host='localhost', database='BoiseCAP073')
+	cnx = mysql.connector.connect(user='root', password='password', host='localhost', database='BoiseCAP073')
 	cursor = cnx.cursor()
 
 	query = ("SELECT First_name, Last_name FROM SQmembers WHERE capid={0} AND date={1};".format(userinput, date))
@@ -28,7 +28,7 @@ def adduser(userinput):
 	last_name = raw_input("Please enter your Last name:")
 	membertype = raw_input("Are you a cadet, senior, visiter:")
 
-	cnx = mysql.connector.connect(user='root', password='starecraft#1', host='localhost', database='BoiseCAP073')
+	cnx = mysql.connector.connect(user='root', password='paswsword', host='localhost', database='BoiseCAP073')
 	cursor = cnx.cursor()
 
 	query = ("INSERT INTO SQmembers (capid, First_name, Last_name, member_type) VALUES ({0}, '{1}', '{2}', '{3}');".format(userinput, first_name, last_name, membertype))
@@ -45,7 +45,7 @@ def readbarcode():
 	
 	
 def connect(userinput):
-	cnx = mysql.connector.connect(user='root', password='starecraft#1', host='localhost', database='BoiseCAP073')
+	cnx = mysql.connector.connect(user='root', password='password', host='localhost', database='BoiseCAP073')
 	cursor = cnx.cursor()
 	
 	query = ("SELECT First_name, Last_name FROM SQmembers WHERE capid={};".format(userinput))
